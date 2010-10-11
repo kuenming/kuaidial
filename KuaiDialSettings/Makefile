@@ -22,10 +22,15 @@ LD=$(CXX)
 
 CFLAGS=-I$(SYSROOTINC) -I$(TOOLCHAININC) -I$(CLASSDUMP)
 
-LDFLAGS=-lobjc -dynamiclib \
+LDFLAGS=-lobjc -lsqlite3 -dynamiclib \
 		-framework CoreFoundation \
 		-framework Foundation \
 		-framework UIKit \
+		-framework CoreTelephony \
+		-framework CoreMedia \
+		-framework Celestial \
+		-framework AddressBook \
+		-framework AudioToolbox \
 		-framework Preferences \
 		-isysroot $(SYSROOT) \
 		-F$(IPHONESDK)/System/Library/Frameworks \
